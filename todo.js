@@ -2,7 +2,43 @@ var todoButton = document.getElementById('enter');
 var todoInput = document.getElementById('userInput');
 var ul = document.querySelector('ul');
 var todos = document.getElementsByTagName('li');
-var nameButton = document.getElementById('enterName')
+var nameButton = document.getElementById('enterName');
+var nameInput = document.getElementById('nameInput');
+var div = document.getElementById('name');
+
+
+const nameInputLength = () => {
+    return nameInput.value.length;
+}
+
+
+const createName = () => {
+    var span = document.createElement('span');
+
+    span.appendChild(document.createTextNode(nameInput.value));
+    div.appendChild(span);
+    nameInput.value = '';
+
+    var wholeDiv = document.getElementById('input');
+    wholeDiv.remove();
+
+}
+
+function addNameAfterClick() {
+    if (nameInputLength() > 0) {
+        createName();
+    }
+}
+
+function addNameAfterKeypress(event) {
+    if (nameInputLength() > 0 && event.which === 13) {
+        createName();
+    }
+}
+
+
+nameButton.addEventListener('click', addNameAfterClick);
+nameInput.addEventListener('keypress', addNameAfterKeypress);
 
 function inputLength() {
     return todoInput.value.length;
