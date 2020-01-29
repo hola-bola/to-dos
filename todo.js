@@ -19,6 +19,9 @@ const createName = () => {
     div.appendChild(span);
     nameInput.value = '';
 
+    var bringS = document.getElementById('s');
+    bringS.style.display = 'inline-block';
+
     var wholeDiv = document.getElementById('input');
     wholeDiv.remove();
 
