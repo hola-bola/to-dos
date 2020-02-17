@@ -1,2 +1,2 @@
-# to-dos
-To-Do list made with Js(Native)
+# To Do List 
+Personalise your to-do list by entering your name and save your tasks.
